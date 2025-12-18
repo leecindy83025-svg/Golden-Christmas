@@ -1,0 +1,27 @@
+/* Global styles copied and cleaned from original single-file project */
+:root { --gold: #FFD700; --bg: #000500; }
+html,body{height:100%;}
+body { 
+    margin: 0; 
+    overflow: hidden; 
+    background-color: var(--bg); 
+    font-family: 'Playfair Display', serif;
+}
+#ui-layer{
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;
+    display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; box-sizing: border-box;
+}
+h1{ color: var(--gold); text-shadow: 0 0 10px var(--gold), 0 0 30px #ff8800; font-size: 3.5rem; margin:0; text-align:center; opacity:0.95; letter-spacing:3px; font-style:italic; width:100%; }
+#bottom-left-panel{ position: absolute; bottom:30px; left:30px; display:flex; flex-direction:column; align-items:flex-start; gap:10px; pointer-events:auto; }
+#status{ color: rgba(255,215,0,0.7); text-align:left; font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:5px; font-weight:bold; text-shadow:0 0 5px rgba(0,0,0,0.8); }
+#controls{ display:flex; gap:10px; }
+.btn{ background: rgba(0,30,10,0.6); border:1px solid rgba(255,215,0,0.5); color:var(--gold); padding:8px 16px; font-family:'Playfair Display', serif; cursor:pointer; transition:all 0.3s; text-transform:uppercase; font-size:0.7rem; letter-spacing:1px; border-radius:20px; backdrop-filter: blur(4px); }
+.btn:hover{ background:var(--gold); color:#002200; box-shadow:0 0 15px var(--gold); border-color:var(--gold); }
+#loader{ position:absolute; top:0; left:0; width:100%; height:100%; background:#000; display:flex; justify-content:center; align-items:center; color:var(--gold); z-index:100; flex-direction:column; transition:opacity 1s; }
+.spinner{ width:50px; height:50px; border:2px solid #004d25; border-top:2px solid var(--gold); border-radius:50%; animation:spin 1s linear infinite; margin-bottom:20px; }
+@keyframes spin{ 100%{ transform:rotate(360deg); } }
+#webcam-container{ position:absolute; bottom:30px; right:30px; width:120px; height:90px; border:1px solid rgba(255,215,0,0.3); background:#000; z-index:20; border-radius:6px; overflow:hidden; display:none; opacity:0.8; }
+#webcam{ width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
+.debug-label{ position:absolute; top:0; left:0; background:rgba(0,0,0,0.7); color:var(--gold); font-size:8px; padding:2px 4px; font-family:monospace; }
+/* small helper for hidden input positioning */
+#imageInput{ display:none; }
