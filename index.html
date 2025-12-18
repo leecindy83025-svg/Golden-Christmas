@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Christmas | Gesture Interactive</title>
+    
+    <!-- Prevent Google Translate -->
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="zh-CN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Import Maps -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- UI -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <div id="loading-text">Loading Christmas Magic...</div>
+    </div>
+
+    <div id="ui-layer">
+        <!-- Top Title -->
+        <h1>Merry Christmas</h1>
+        
+        <!-- Bottom Left Panel -->
+        <div id="bottom-left-panel">
+            <div id="status">Mode: Tree Form</div>
+            <div id="controls">
+                <!-- Added webkitdirectory for folder support, kept multiple for files -->
+                <input type="file" id="imageInput" multiple webkitdirectory accept="image/*" style="display:none;">
+                <button class="btn" onclick="document.getElementById('imageInput').click()">Add Photos</button>
+                <button class="btn" id="camBtn">Camera</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Webcam Debug Container -->
+    <div id="webcam-container">
+        <div class="debug-label">AI Vision</div>
+        <video id="webcam" playsinline autoplay></video>
+    </div>
+
+    <!-- Logic (module entry) -->
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
